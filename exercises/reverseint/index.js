@@ -12,14 +12,11 @@ function reverseInt(n) {
   if (n === 0){
     return 0;
   } else {
-    var arr = n.toString();
+    var arr = parseInt(n.toString().split('').reverse().join(''));
     if (Math.sign(n) === -1){
-      n = n * -1;
-      var soln = parseInt(arr.split('').reverse().join(''));
-      return soln * -1;
+      return arr * -1;
     } else {
-      var soln = parseInt(arr.split('').reverse().join(''));
-      return soln;
+      return arr;
     }
   }
 }
