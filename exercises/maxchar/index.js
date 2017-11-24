@@ -7,6 +7,8 @@
 
 function maxChar(str) {
   var count = {};
+  var max = 0;
+  var maxChar = '';
   var arr = str.split('');
   arr.forEach((char) => {
     if (count.hasOwnProperty(char)){
@@ -15,7 +17,14 @@ function maxChar(str) {
       count[char] = 1;
     }
   });
-  return count;
+
+  for (let char in count){
+    if (count[char] > max){
+      max = count[char];
+      maxChar = char;
+    }
+  }
+  return maxChar;
 }
 
 module.exports = maxChar;
