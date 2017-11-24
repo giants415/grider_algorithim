@@ -6,10 +6,10 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  var count = {};
-  var max = 0;
-  var maxChar = '';
-  var arr = str.split('');
+  let count = {};
+  let max = 0;
+  let maxChar = '';
+  let arr = str.split('');
   arr.forEach((char) => {
     if (count.hasOwnProperty(char)){
       count[char] = count[char] + 1;
