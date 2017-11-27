@@ -9,11 +9,26 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  container = [];
-  while (array.length > 0){
-    container.push(array.splice(0,size));
+  // container = [];
+  // while (array.length > 0){
+  //   container.push(array.splice(0,size));
+  // }
+  // return container;
+  //
+
+
+  //Grider's Basic Soln
+  const chunked = [];
+
+  for (let element of array){
+    const last = chunked[chunked.length - 1];
+    if(!last || last.length === size){
+      chunked.push([element]);
+    } else {
+      last.push(element);
+    }
   }
-  return container;
+  return chunked
 }
 
 module.exports = chunk;
