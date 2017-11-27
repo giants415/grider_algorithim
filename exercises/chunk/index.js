@@ -9,6 +9,9 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
+
+  //DOWNSIDE of my soln: mutates original array.
+  //SOLN: Create copy of array to mutate or use slice method
   // container = [];
   // while (array.length > 0){
   //   container.push(array.splice(0,size));
