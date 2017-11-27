@@ -40,7 +40,6 @@ function fizzBuzz(n) {
     } else {
       console.log(i);
     }
-
   }
 }
 
