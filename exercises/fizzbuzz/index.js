@@ -13,18 +13,34 @@
 //   buzz
 
 function fizzBuzz(n) {
-  var start = 1;
-  while (start <= n){
-    if (start % 3 === 0 && start % 5 === 0){
+  // var start = 1;
+  // while (start <= n){
+  //   if (start % 3 === 0 && start % 5 === 0){
+  //     console.log('fizzbuzz');
+  //   } else if (start % 3 === 0){
+  //     console.log('fizz');
+  //   } else if (start % 5 === 0){
+  //     console.log('buzz');
+  //   } else {
+  //     console.log(start);
+  //   }
+  //   start++;
+  // }
+
+
+
+  //Grider's soln, uses for loop which removes the "start" variable
+  for (let i = 1; i <= n; i++){
+    if (i % 3 === 0 && i % 5 === 0){
       console.log('fizzbuzz');
-    } else if (start % 3 === 0){
+    } else if (i % 3 === 0){
       console.log('fizz');
-    } else if (start % 5 === 0){
+    } else if (i % 5 === 0){
       console.log('buzz');
     } else {
-      console.log(start);
+      console.log(i);
     }
-    start++;
+
   }
 }
 
