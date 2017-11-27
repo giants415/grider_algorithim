@@ -9,7 +9,7 @@ function maxChar(str) {
 // Grider's soln
   const charMap = {};
   let max = 0;
-  let macChar = '';
+  let maxChar = '';
 
   for (let char of str){
     if (charMap[char]){
