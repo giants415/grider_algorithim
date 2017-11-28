@@ -10,7 +10,19 @@
 
 
 function anagrams(stringA, stringB) {
-  
+  const charMapA = buildCharMap(stringA);
+  const charMapB = buildCharMap(stringB);
+
+  if (Object.keys(charMapA).length !== Object.keys(charMapB).length){
+    return false;
+  }
+
+  for (let char in charMapA){
+    if (charMapA[char] !== charMapB[char]){
+      return false;
+    }
+  }
+  return true;
 }
 
 //helper function for building charMap
