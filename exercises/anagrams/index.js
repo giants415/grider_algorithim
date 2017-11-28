@@ -10,9 +10,19 @@
 
 
 function anagrams(stringA, stringB) {
-
+  
 }
 
+//helper function for building charMap
+function buildCharMap(str){
+  const charMap = {};
+
+  for (let char of str.replace(/[^\w]/g, "").toLowerCase()){
+    charMap[char] = charMap[char] + 1 || 1;
+  }
+
+  return charMap;
+}
 
 
 //my original soln attempt
@@ -21,7 +31,7 @@ function anagrams(stringA, stringB) {
 //   var a = stringA.replace(/[^\w]/g, "").toLowerCase();
 //   var b = stringB.replace(/[^\w]/g, "").toLowerCase();
 //   const holder = [a,b];
-// 
+//
 //   for (let str of holder){
 //     if (charMap[char]){
 //       charMap[char]++;
