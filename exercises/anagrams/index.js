@@ -10,14 +10,19 @@
 
 //more straight forward
 function anagrams(stringA, stringB) {
-  let aSorted = stringA.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
-  let bSorted = stringB.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
+
+  let aSorted = cleanString(stringA);
+  let bSorted = cleanString(stringB);
 
   if (aSorted === bSorted){
     return true;
   }
 }
 
+//helper method
+function cleanString (str){
+  return str.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
+}
 
 //original Grider Soln
 // function anagrams(stringA, stringB) {
