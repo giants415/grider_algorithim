@@ -8,33 +8,44 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-
+//more straight forward
 function anagrams(stringA, stringB) {
-  const charMapA = buildCharMap(stringA);
-  const charMapB = buildCharMap(stringB);
+  let aSorted = stringA.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
+  let bSorted = stringB.replace(/[^\w]/g, "").toLowerCase().split('').sort().join('');
 
-  if (Object.keys(charMapA).length !== Object.keys(charMapB).length){
-    return false;
+  if (aSorted === bSorted){
+    return true;
   }
-
-  for (let char in charMapA){
-    if (charMapA[char] !== charMapB[char]){
-      return false;
-    }
-  }
-  return true;
 }
 
-//helper function for building charMap
-function buildCharMap(str){
-  const charMap = {};
 
-  for (let char of str.replace(/[^\w]/g, "").toLowerCase()){
-    charMap[char] = charMap[char] + 1 || 1;
-  }
-
-  return charMap;
-}
+//original Grider Soln
+// function anagrams(stringA, stringB) {
+//   const charMapA = buildCharMap(stringA);
+//   const charMapB = buildCharMap(stringB);
+//
+//   if (Object.keys(charMapA).length !== Object.keys(charMapB).length){
+//     return false;
+//   }
+//
+//   for (let char in charMapA){
+//     if (charMapA[char] !== charMapB[char]){
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+//
+// //helper function for building charMap
+// function buildCharMap(str){
+//   const charMap = {};
+//
+//   for (let char of str.replace(/[^\w]/g, "").toLowerCase()){
+//     charMap[char] = charMap[char] + 1 || 1;
+//   }
+//
+//   return charMap;
+// }
 
 
 //my original soln attempt
