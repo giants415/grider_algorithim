@@ -10,13 +10,7 @@
 
 //more straight forward
 function anagrams(stringA, stringB) {
-
-  let aSorted = cleanString(stringA);
-  let bSorted = cleanString(stringB);
-
-  if (aSorted === bSorted){
-    return true;
-  }
+  return cleanString(stringA) === cleanString(stringB);
 }
 
 //helper method
