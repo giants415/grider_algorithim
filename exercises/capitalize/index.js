@@ -11,9 +11,12 @@ function capitalize(str) {
   let output = [];
   const input = str.split(' ');
   for (let word of input){
-    output.push(word[0].toUpperCase());
+    let a = word[0].slice(0).toUpperCase();
+    let b = word.slice(1);
+    let newWord = a + b;
+    output.push(newWord);
   }
-  return output;
+  return output.join(' ');
 }
 
 module.exports = capitalize;
