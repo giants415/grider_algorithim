@@ -19,7 +19,6 @@ function capitalize(str) {
 
 
 
-
 //my original soln
 // function capitalize(str) {
 //   const output = [];
