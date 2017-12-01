@@ -13,8 +13,7 @@ function capitalize(str) {
   for (let word of input){
     let a = word[0].slice(0).toUpperCase();
     let b = word.slice(1);
-    let newWord = a + b;
-    output.push(newWord);
+    output.push(a + b);
   }
   return output.join(' ');
 }
