@@ -17,6 +17,17 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+
+//my initial soln
+function steps(n) {
+  let init = 1;
+  while (init <= n) {
+    let a = '#'.repeat(init);
+    let b = ' '.repeat(n - init);
+    console.log(a + b);
+    init++;
+  }
+}
+
 
 module.exports = steps;
