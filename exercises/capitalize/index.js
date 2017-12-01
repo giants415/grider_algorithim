@@ -7,15 +7,29 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
+//Grider's 1st soln; very similar to mine but much DRYer so I've combined the 2 here
 function capitalize(str) {
   const output = [];
-  const input = str.split(' ');
-  for (let word of input){
-    let a = word[0].slice(0).toUpperCase();
-    let b = word.slice(1);
-    output.push(a + b);
+  for (let word of str.split(' ')){
+    output.push(word[0].toUpperCase() + word.slice(1));
   }
   return output.join(' ');
 }
+
+
+
+
+
+//my original soln
+// function capitalize(str) {
+//   const output = [];
+//   const input = str.split(' ');
+//   for (let word of input){
+//     let a = word[0].slice(0).toUpperCase();
+//     let b = word.slice(1);
+//     output.push(a + b);
+//   }
+//   return output.join(' ');
+// }
 
 module.exports = capitalize;
