@@ -7,6 +7,8 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+
+//my initial soln
 function vowels(str) {
   const a = str.toLowerCase().split('');
   let count = 0;
