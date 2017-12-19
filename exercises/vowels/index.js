@@ -8,20 +8,32 @@
 //   vowels('Why?') --> 0
 
 
+//Grider's condensed soln
+function vowels(str) {
+  //regex explanation: letters in brackets = LMK if one of these are present
+  //g = keep going after finding instance, i = insensitive to case
+  const matches = str.match(/[aeiou]/gi);
+
+  // ternary if matches is 'truthy' (i.e. not null), return matches.length else return 0 since
+  // the regex above, will return null unless letters are present in which case an array is returned
+  return matches ? matches.length : 0;
+}
+
+
 
 //Grider's iterative soln
-function vowels(str) {
-  let count = 0;
-  const checker = ['a', 'e', 'i', 'o', 'u'];
-
-  for (let char of str.toLowerCase()){
-    if (checker.includes(char)){
-      count++;
-    }
-  }
-
-  return count;
-}
+// function vowels(str) {
+//   let count = 0;
+//   const checker = ['a', 'e', 'i', 'o', 'u'];
+//
+//   for (let char of str.toLowerCase()){
+//     if (checker.includes(char)){
+//       count++;
+//     }
+//   }
+//
+//   return count;
+// }
 
 
 //my initial soln
