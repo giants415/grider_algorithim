@@ -15,6 +15,54 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+//grider's soln
+//concepts to review
+// as the row counter values change, how do they aid with
+// keeping track of each other to maintain the limits
+
+function matrix(n) {
+  const results = [];
+
+  let counter = 1;
+  let startCol = 0;
+  let endCol = n - 1;
+  let startRow = 0;
+  let endRow = n - 1;
+
+  for (let i = 0; i < n; i++){
+    results.push([]);
+  }
+
+  while (startCol <= endCol && startRow <= endRow){
+    // Top row for loop
+    for (let i = startCol; i <= endCol; i++){
+      results[startRow][i] = counter;
+      counter++;
+    }
+    startRow++;
+
+    //Right column
+    for (let i = startRow; i <= endRow; i++){
+      results[i][endCol] = counter;
+      counter++;
+    }
+    endCol--;
+
+    //Bottom row
+    for (let i = endCol; i >= startCol; i--){
+      results[endRow][i] = counter;
+      counter++;
+    }
+    endRow--;
+
+    //start col
+    for (let i = endRow; i >= startRow; i--){
+      results[i][startCol] = counter;
+      counter++;
+    }
+    startCol++;
+  }
+  return results;
+}
 
 module.exports = matrix;
